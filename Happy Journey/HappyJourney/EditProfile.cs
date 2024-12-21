@@ -17,6 +17,9 @@ namespace HappyJourney
 {
     public partial class EditProfile : Form
     {
+        private int loggedInUserId;
+        private int loggedInUserRoleId;
+
         public EditProfile()
         {
             InitializeComponent();
@@ -72,6 +75,13 @@ namespace HappyJourney
                 MessageBox.Show($"Error updating profile: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void imgBackArrow_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(loggedInUserId, loggedInUserRoleId);
+            profile.ShowDialog();
+            this.Hide();
         }
     }
 }

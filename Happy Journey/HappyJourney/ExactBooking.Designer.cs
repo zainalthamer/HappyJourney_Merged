@@ -69,218 +69,193 @@
             // 
             this.lblAdditionalServices.AutoSize = true;
             this.lblAdditionalServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdditionalServices.Location = new System.Drawing.Point(41, 355);
-            this.lblAdditionalServices.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdditionalServices.Location = new System.Drawing.Point(60, 504);
             this.lblAdditionalServices.Name = "lblAdditionalServices";
-            this.lblAdditionalServices.Size = new System.Drawing.Size(147, 17);
+            this.lblAdditionalServices.Size = new System.Drawing.Size(215, 25);
             this.lblAdditionalServices.TabIndex = 68;
             this.lblAdditionalServices.Text = "Additional Services";
             this.lblAdditionalServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtGender4
             // 
-            this.txtGender4.Location = new System.Drawing.Point(670, 311);
-            this.txtGender4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGender4.Location = new System.Drawing.Point(1002, 435);
             this.txtGender4.Name = "txtGender4";
-            this.txtGender4.Size = new System.Drawing.Size(135, 22);
+            this.txtGender4.Size = new System.Drawing.Size(200, 31);
             this.txtGender4.TabIndex = 65;
             // 
             // txtDateOfBirth4
             // 
-            this.txtDateOfBirth4.Location = new System.Drawing.Point(527, 312);
-            this.txtDateOfBirth4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDateOfBirth4.Location = new System.Drawing.Point(787, 437);
             this.txtDateOfBirth4.Name = "txtDateOfBirth4";
-            this.txtDateOfBirth4.Size = new System.Drawing.Size(135, 22);
+            this.txtDateOfBirth4.Size = new System.Drawing.Size(200, 31);
             this.txtDateOfBirth4.TabIndex = 64;
             // 
             // txtCpr4
             // 
-            this.txtCpr4.Location = new System.Drawing.Point(815, 279);
-            this.txtCpr4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpr4.Location = new System.Drawing.Point(1221, 385);
             this.txtCpr4.Name = "txtCpr4";
-            this.txtCpr4.Size = new System.Drawing.Size(135, 22);
+            this.txtCpr4.Size = new System.Drawing.Size(200, 31);
             this.txtCpr4.TabIndex = 63;
             // 
             // txtLastName4
             // 
-            this.txtLastName4.Location = new System.Drawing.Point(670, 280);
-            this.txtLastName4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName4.Location = new System.Drawing.Point(1002, 387);
             this.txtLastName4.Name = "txtLastName4";
-            this.txtLastName4.Size = new System.Drawing.Size(135, 22);
+            this.txtLastName4.Size = new System.Drawing.Size(200, 31);
             this.txtLastName4.TabIndex = 62;
             // 
             // txtFirstName4
             // 
-            this.txtFirstName4.Location = new System.Drawing.Point(525, 280);
-            this.txtFirstName4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName4.Location = new System.Drawing.Point(785, 387);
             this.txtFirstName4.Name = "txtFirstName4";
-            this.txtFirstName4.Size = new System.Drawing.Size(135, 22);
+            this.txtFirstName4.Size = new System.Drawing.Size(200, 31);
             this.txtFirstName4.TabIndex = 61;
             // 
             // lblPassenger4
             // 
             this.lblPassenger4.AutoSize = true;
             this.lblPassenger4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassenger4.Location = new System.Drawing.Point(523, 251);
-            this.lblPassenger4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassenger4.Location = new System.Drawing.Point(781, 341);
             this.lblPassenger4.Name = "lblPassenger4";
-            this.lblPassenger4.Size = new System.Drawing.Size(99, 17);
+            this.lblPassenger4.Size = new System.Drawing.Size(144, 25);
             this.lblPassenger4.TabIndex = 60;
             this.lblPassenger4.Text = "Passenger 4";
             this.lblPassenger4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtGender3
             // 
-            this.txtGender3.Location = new System.Drawing.Point(182, 311);
-            this.txtGender3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGender3.Location = new System.Drawing.Point(270, 435);
             this.txtGender3.Name = "txtGender3";
-            this.txtGender3.Size = new System.Drawing.Size(135, 22);
+            this.txtGender3.Size = new System.Drawing.Size(200, 31);
             this.txtGender3.TabIndex = 59;
             // 
             // txtDateOfBirth3
             // 
-            this.txtDateOfBirth3.Location = new System.Drawing.Point(39, 312);
-            this.txtDateOfBirth3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDateOfBirth3.Location = new System.Drawing.Point(55, 437);
             this.txtDateOfBirth3.Name = "txtDateOfBirth3";
-            this.txtDateOfBirth3.Size = new System.Drawing.Size(135, 22);
+            this.txtDateOfBirth3.Size = new System.Drawing.Size(200, 31);
             this.txtDateOfBirth3.TabIndex = 58;
             // 
             // txtCpr3
             // 
-            this.txtCpr3.Location = new System.Drawing.Point(327, 279);
-            this.txtCpr3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpr3.Location = new System.Drawing.Point(487, 385);
             this.txtCpr3.Name = "txtCpr3";
-            this.txtCpr3.Size = new System.Drawing.Size(135, 22);
+            this.txtCpr3.Size = new System.Drawing.Size(200, 31);
             this.txtCpr3.TabIndex = 57;
             // 
             // txtLastName3
             // 
-            this.txtLastName3.Location = new System.Drawing.Point(182, 280);
-            this.txtLastName3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName3.Location = new System.Drawing.Point(270, 387);
             this.txtLastName3.Name = "txtLastName3";
-            this.txtLastName3.Size = new System.Drawing.Size(135, 22);
+            this.txtLastName3.Size = new System.Drawing.Size(200, 31);
             this.txtLastName3.TabIndex = 56;
             // 
             // txtFirstName3
             // 
-            this.txtFirstName3.Location = new System.Drawing.Point(37, 280);
-            this.txtFirstName3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName3.Location = new System.Drawing.Point(53, 387);
             this.txtFirstName3.Name = "txtFirstName3";
-            this.txtFirstName3.Size = new System.Drawing.Size(135, 22);
+            this.txtFirstName3.Size = new System.Drawing.Size(200, 31);
             this.txtFirstName3.TabIndex = 55;
             // 
             // lblPassenger3
             // 
             this.lblPassenger3.AutoSize = true;
             this.lblPassenger3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassenger3.Location = new System.Drawing.Point(35, 251);
-            this.lblPassenger3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassenger3.Location = new System.Drawing.Point(49, 341);
             this.lblPassenger3.Name = "lblPassenger3";
-            this.lblPassenger3.Size = new System.Drawing.Size(99, 17);
+            this.lblPassenger3.Size = new System.Drawing.Size(144, 25);
             this.lblPassenger3.TabIndex = 54;
             this.lblPassenger3.Text = "Passenger 3";
             this.lblPassenger3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtGender2
             // 
-            this.txtGender2.Location = new System.Drawing.Point(670, 206);
-            this.txtGender2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGender2.Location = new System.Drawing.Point(1002, 271);
             this.txtGender2.Name = "txtGender2";
-            this.txtGender2.Size = new System.Drawing.Size(135, 22);
+            this.txtGender2.Size = new System.Drawing.Size(200, 31);
             this.txtGender2.TabIndex = 51;
             // 
             // txtDateOfBirth2
             // 
-            this.txtDateOfBirth2.Location = new System.Drawing.Point(527, 206);
-            this.txtDateOfBirth2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDateOfBirth2.Location = new System.Drawing.Point(787, 271);
             this.txtDateOfBirth2.Name = "txtDateOfBirth2";
-            this.txtDateOfBirth2.Size = new System.Drawing.Size(135, 22);
+            this.txtDateOfBirth2.Size = new System.Drawing.Size(200, 31);
             this.txtDateOfBirth2.TabIndex = 50;
             // 
             // txtCpr2
             // 
-            this.txtCpr2.Location = new System.Drawing.Point(815, 174);
-            this.txtCpr2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpr2.Location = new System.Drawing.Point(1221, 221);
             this.txtCpr2.Name = "txtCpr2";
-            this.txtCpr2.Size = new System.Drawing.Size(135, 22);
+            this.txtCpr2.Size = new System.Drawing.Size(200, 31);
             this.txtCpr2.TabIndex = 49;
             // 
             // txtLastName2
             // 
-            this.txtLastName2.Location = new System.Drawing.Point(670, 174);
-            this.txtLastName2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName2.Location = new System.Drawing.Point(1002, 221);
             this.txtLastName2.Name = "txtLastName2";
-            this.txtLastName2.Size = new System.Drawing.Size(135, 22);
+            this.txtLastName2.Size = new System.Drawing.Size(200, 31);
             this.txtLastName2.TabIndex = 48;
             // 
             // txtFirstName2
             // 
-            this.txtFirstName2.Location = new System.Drawing.Point(525, 174);
-            this.txtFirstName2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName2.Location = new System.Drawing.Point(785, 221);
             this.txtFirstName2.Name = "txtFirstName2";
-            this.txtFirstName2.Size = new System.Drawing.Size(135, 22);
+            this.txtFirstName2.Size = new System.Drawing.Size(200, 31);
             this.txtFirstName2.TabIndex = 47;
             // 
             // lblPassneger2
             // 
             this.lblPassneger2.AutoSize = true;
             this.lblPassneger2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassneger2.Location = new System.Drawing.Point(523, 145);
-            this.lblPassneger2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassneger2.Location = new System.Drawing.Point(781, 176);
             this.lblPassneger2.Name = "lblPassneger2";
-            this.lblPassneger2.Size = new System.Drawing.Size(99, 17);
+            this.lblPassneger2.Size = new System.Drawing.Size(144, 25);
             this.lblPassneger2.TabIndex = 46;
             this.lblPassneger2.Text = "Passenger 2";
             this.lblPassneger2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtGender1
             // 
-            this.txtGender1.Location = new System.Drawing.Point(182, 206);
-            this.txtGender1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGender1.Location = new System.Drawing.Point(270, 271);
             this.txtGender1.Name = "txtGender1";
-            this.txtGender1.Size = new System.Drawing.Size(135, 22);
+            this.txtGender1.Size = new System.Drawing.Size(200, 31);
             this.txtGender1.TabIndex = 45;
             // 
             // txtDateOfBirth1
             // 
-            this.txtDateOfBirth1.Location = new System.Drawing.Point(39, 206);
-            this.txtDateOfBirth1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDateOfBirth1.Location = new System.Drawing.Point(55, 271);
             this.txtDateOfBirth1.Name = "txtDateOfBirth1";
-            this.txtDateOfBirth1.Size = new System.Drawing.Size(135, 22);
+            this.txtDateOfBirth1.Size = new System.Drawing.Size(200, 31);
             this.txtDateOfBirth1.TabIndex = 44;
             // 
             // txtCpr1
             // 
-            this.txtCpr1.Location = new System.Drawing.Point(327, 174);
-            this.txtCpr1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCpr1.Location = new System.Drawing.Point(487, 221);
             this.txtCpr1.Name = "txtCpr1";
-            this.txtCpr1.Size = new System.Drawing.Size(135, 22);
+            this.txtCpr1.Size = new System.Drawing.Size(200, 31);
             this.txtCpr1.TabIndex = 43;
             // 
             // txtLastName1
             // 
-            this.txtLastName1.Location = new System.Drawing.Point(182, 174);
-            this.txtLastName1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName1.Location = new System.Drawing.Point(270, 221);
             this.txtLastName1.Name = "txtLastName1";
-            this.txtLastName1.Size = new System.Drawing.Size(135, 22);
+            this.txtLastName1.Size = new System.Drawing.Size(200, 31);
             this.txtLastName1.TabIndex = 42;
             // 
             // txtFirstName1
             // 
-            this.txtFirstName1.Location = new System.Drawing.Point(37, 174);
-            this.txtFirstName1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName1.Location = new System.Drawing.Point(53, 221);
             this.txtFirstName1.Name = "txtFirstName1";
-            this.txtFirstName1.Size = new System.Drawing.Size(135, 22);
+            this.txtFirstName1.Size = new System.Drawing.Size(200, 31);
             this.txtFirstName1.TabIndex = 41;
             // 
             // lblPassenger1
             // 
             this.lblPassenger1.AutoSize = true;
             this.lblPassenger1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassenger1.Location = new System.Drawing.Point(35, 145);
-            this.lblPassenger1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassenger1.Location = new System.Drawing.Point(49, 176);
             this.lblPassenger1.Name = "lblPassenger1";
-            this.lblPassenger1.Size = new System.Drawing.Size(99, 17);
+            this.lblPassenger1.Size = new System.Drawing.Size(144, 25);
             this.lblPassenger1.TabIndex = 40;
             this.lblPassenger1.Text = "Passenger 1";
             this.lblPassenger1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -290,13 +265,14 @@
             this.statusLabel.AutoSize = true;
             this.statusLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.statusLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.statusLabel.Location = new System.Drawing.Point(37, 91);
-            this.statusLabel.MinimumSize = new System.Drawing.Size(200, 30);
+            this.statusLabel.Location = new System.Drawing.Point(54, 103);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.MinimumSize = new System.Drawing.Size(299, 46);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.statusLabel.Size = new System.Drawing.Size(200, 32);
+            this.statusLabel.Padding = new System.Windows.Forms.Padding(8);
+            this.statusLabel.Size = new System.Drawing.Size(299, 46);
             this.statusLabel.TabIndex = 71;
             this.statusLabel.Text = "Status";
             this.statusLabel.Click += new System.EventHandler(this.label1_Click);
@@ -306,13 +282,14 @@
             this.priceLabel.AutoSize = true;
             this.priceLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.priceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.priceLabel.Location = new System.Drawing.Point(275, 91);
-            this.priceLabel.MinimumSize = new System.Drawing.Size(200, 30);
+            this.priceLabel.Location = new System.Drawing.Point(371, 103);
+            this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.priceLabel.MinimumSize = new System.Drawing.Size(299, 46);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.priceLabel.Size = new System.Drawing.Size(200, 32);
+            this.priceLabel.Padding = new System.Windows.Forms.Padding(8);
+            this.priceLabel.Size = new System.Drawing.Size(299, 46);
             this.priceLabel.TabIndex = 72;
             this.priceLabel.Text = "Price";
             this.priceLabel.Click += new System.EventHandler(this.label2_Click);
@@ -322,64 +299,61 @@
             this.categoryLabel.AutoSize = true;
             this.categoryLabel.BackColor = System.Drawing.SystemColors.Window;
             this.categoryLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryLabel.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.categoryLabel.Location = new System.Drawing.Point(511, 91);
-            this.categoryLabel.MinimumSize = new System.Drawing.Size(200, 30);
+            this.categoryLabel.Location = new System.Drawing.Point(689, 103);
+            this.categoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.categoryLabel.MinimumSize = new System.Drawing.Size(299, 46);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.categoryLabel.Size = new System.Drawing.Size(200, 32);
+            this.categoryLabel.Padding = new System.Windows.Forms.Padding(8);
+            this.categoryLabel.Size = new System.Drawing.Size(299, 46);
             this.categoryLabel.TabIndex = 73;
             this.categoryLabel.Text = "Category";
             // 
             // txtSeat1
             // 
-            this.txtSeat1.Location = new System.Drawing.Point(327, 206);
-            this.txtSeat1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSeat1.Location = new System.Drawing.Point(487, 271);
             this.txtSeat1.Name = "txtSeat1";
-            this.txtSeat1.Size = new System.Drawing.Size(135, 22);
+            this.txtSeat1.Size = new System.Drawing.Size(200, 31);
             this.txtSeat1.TabIndex = 80;
             this.txtSeat1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtSeat2
             // 
-            this.txtSeat2.Location = new System.Drawing.Point(815, 206);
-            this.txtSeat2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSeat2.Location = new System.Drawing.Point(1221, 271);
             this.txtSeat2.Name = "txtSeat2";
-            this.txtSeat2.Size = new System.Drawing.Size(135, 22);
+            this.txtSeat2.Size = new System.Drawing.Size(200, 31);
             this.txtSeat2.TabIndex = 81;
             // 
             // txtSeat3
             // 
-            this.txtSeat3.Location = new System.Drawing.Point(327, 311);
-            this.txtSeat3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSeat3.Location = new System.Drawing.Point(487, 435);
             this.txtSeat3.Name = "txtSeat3";
-            this.txtSeat3.Size = new System.Drawing.Size(135, 22);
+            this.txtSeat3.Size = new System.Drawing.Size(200, 31);
             this.txtSeat3.TabIndex = 82;
             this.txtSeat3.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // txtSeat4
             // 
-            this.txtSeat4.Location = new System.Drawing.Point(815, 312);
-            this.txtSeat4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSeat4.Location = new System.Drawing.Point(1221, 437);
             this.txtSeat4.Name = "txtSeat4";
-            this.txtSeat4.Size = new System.Drawing.Size(135, 22);
+            this.txtSeat4.Size = new System.Drawing.Size(200, 31);
             this.txtSeat4.TabIndex = 83;
             // 
             // servicesFlowLayoutPanel
             // 
-            this.servicesFlowLayoutPanel.Location = new System.Drawing.Point(38, 384);
+            this.servicesFlowLayoutPanel.Location = new System.Drawing.Point(55, 549);
+            this.servicesFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.servicesFlowLayoutPanel.Name = "servicesFlowLayoutPanel";
-            this.servicesFlowLayoutPanel.Size = new System.Drawing.Size(912, 100);
+            this.servicesFlowLayoutPanel.Size = new System.Drawing.Size(1368, 170);
             this.servicesFlowLayoutPanel.TabIndex = 84;
             // 
             // imgBackArrow
             // 
             this.imgBackArrow.Image = global::HappyJourney.Properties.Resources.Back_arrow;
-            this.imgBackArrow.Location = new System.Drawing.Point(38, 24);
-            this.imgBackArrow.Margin = new System.Windows.Forms.Padding(2);
+            this.imgBackArrow.Location = new System.Drawing.Point(55, 22);
             this.imgBackArrow.Name = "imgBackArrow";
-            this.imgBackArrow.Size = new System.Drawing.Size(29, 27);
+            this.imgBackArrow.Size = new System.Drawing.Size(44, 42);
             this.imgBackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBackArrow.TabIndex = 85;
             this.imgBackArrow.TabStop = false;
@@ -387,9 +361,10 @@
             // 
             // ExactBooking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 496);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1472, 719);
             this.Controls.Add(this.imgBackArrow);
             this.Controls.Add(this.servicesFlowLayoutPanel);
             this.Controls.Add(this.txtSeat4);
@@ -424,6 +399,7 @@
             this.Controls.Add(this.txtLastName1);
             this.Controls.Add(this.txtFirstName1);
             this.Controls.Add(this.lblPassenger1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ExactBooking";
             this.Text = "ExactBooking";
             this.Load += new System.EventHandler(this.ExactBooking_Load);

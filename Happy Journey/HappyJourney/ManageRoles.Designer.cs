@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mnuManageRoles = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,18 +39,17 @@
             this.inboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.composeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridRoles = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchBar = new System.Windows.Forms.TextBox();
-            this.btnAddRole = new System.Windows.Forms.Button();
-            this.happy_journeyDataSet5 = new HappyJourney.happy_journeyDataSet5();
-            this.userRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userRoleTableAdapter = new HappyJourney.happy_journeyDataSet5TableAdapters.UserRoleTableAdapter();
             this.roleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.happy_journeyDataSet5 = new HappyJourney.happy_journeyDataSet5();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchBar = new System.Windows.Forms.TextBox();
+            this.userRoleTableAdapter = new HappyJourney.happy_journeyDataSet5TableAdapters.UserRoleTableAdapter();
             this.mnuManageRoles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happy_journeyDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRoleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happy_journeyDataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuManageRoles
@@ -108,83 +107,37 @@
             // 
             this.dataGridRoles.AutoGenerateColumns = false;
             this.dataGridRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridRoles.ColumnHeadersHeight = 30;
             this.dataGridRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roleidDataGridViewTextBoxColumn,
             this.rolenameDataGridViewTextBoxColumn});
             this.dataGridRoles.DataSource = this.userRoleBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridRoles.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridRoles.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridRoles.EnableHeadersVisualStyles = false;
-            this.dataGridRoles.Location = new System.Drawing.Point(29, 208);
+            this.dataGridRoles.Location = new System.Drawing.Point(29, 165);
             this.dataGridRoles.Name = "dataGridRoles";
             this.dataGridRoles.RowHeadersWidth = 82;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dataGridRoles.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridRoles.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridRoles.RowTemplate.Height = 33;
-            this.dataGridRoles.Size = new System.Drawing.Size(1419, 511);
+            this.dataGridRoles.Size = new System.Drawing.Size(1419, 554);
             this.dataGridRoles.TabIndex = 8;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Black;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1280, 138);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(168, 51);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchBar
-            // 
-            this.txtSearchBar.Location = new System.Drawing.Point(29, 148);
-            this.txtSearchBar.Name = "txtSearchBar";
-            this.txtSearchBar.Size = new System.Drawing.Size(1245, 31);
-            this.txtSearchBar.TabIndex = 6;
-            // 
-            // btnAddRole
-            // 
-            this.btnAddRole.BackColor = System.Drawing.Color.Black;
-            this.btnAddRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddRole.ForeColor = System.Drawing.Color.White;
-            this.btnAddRole.Location = new System.Drawing.Point(25, 73);
-            this.btnAddRole.Name = "btnAddRole";
-            this.btnAddRole.Size = new System.Drawing.Size(168, 51);
-            this.btnAddRole.TabIndex = 5;
-            this.btnAddRole.Text = "Add User";
-            this.btnAddRole.UseVisualStyleBackColor = false;
-            // 
-            // happy_journeyDataSet5
-            // 
-            this.happy_journeyDataSet5.DataSetName = "happy_journeyDataSet5";
-            this.happy_journeyDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userRoleBindingSource
-            // 
-            this.userRoleBindingSource.DataMember = "UserRole";
-            this.userRoleBindingSource.DataSource = this.happy_journeyDataSet5;
-            // 
-            // userRoleTableAdapter
-            // 
-            this.userRoleTableAdapter.ClearBeforeFill = true;
             // 
             // roleidDataGridViewTextBoxColumn
             // 
@@ -201,6 +154,40 @@
             this.rolenameDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.rolenameDataGridViewTextBoxColumn.Name = "rolenameDataGridViewTextBoxColumn";
             // 
+            // userRoleBindingSource
+            // 
+            this.userRoleBindingSource.DataMember = "UserRole";
+            this.userRoleBindingSource.DataSource = this.happy_journeyDataSet5;
+            // 
+            // happy_journeyDataSet5
+            // 
+            this.happy_journeyDataSet5.DataSetName = "happy_journeyDataSet5";
+            this.happy_journeyDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Black;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1280, 85);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(168, 51);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearchBar
+            // 
+            this.txtSearchBar.Location = new System.Drawing.Point(29, 95);
+            this.txtSearchBar.Name = "txtSearchBar";
+            this.txtSearchBar.Size = new System.Drawing.Size(1245, 31);
+            this.txtSearchBar.TabIndex = 6;
+            // 
+            // userRoleTableAdapter
+            // 
+            this.userRoleTableAdapter.ClearBeforeFill = true;
+            // 
             // ManageRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -210,7 +197,6 @@
             this.Controls.Add(this.dataGridRoles);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBar);
-            this.Controls.Add(this.btnAddRole);
             this.Controls.Add(this.mnuManageRoles);
             this.MainMenuStrip = this.mnuManageRoles;
             this.Name = "ManageRoles";
@@ -219,8 +205,8 @@
             this.mnuManageRoles.ResumeLayout(false);
             this.mnuManageRoles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happy_journeyDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRoleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happy_journeyDataSet5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +223,6 @@
         private System.Windows.Forms.DataGridView dataGridRoles;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchBar;
-        private System.Windows.Forms.Button btnAddRole;
         private happy_journeyDataSet5 happy_journeyDataSet5;
         private System.Windows.Forms.BindingSource userRoleBindingSource;
         private happy_journeyDataSet5TableAdapters.UserRoleTableAdapter userRoleTableAdapter;

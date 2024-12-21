@@ -41,11 +41,12 @@
             // 
             this.flightsGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.flightsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.flightsGridView.Location = new System.Drawing.Point(41, 67);
+            this.flightsGridView.Location = new System.Drawing.Point(62, 105);
+            this.flightsGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flightsGridView.Name = "flightsGridView";
             this.flightsGridView.RowHeadersWidth = 51;
             this.flightsGridView.RowTemplate.Height = 24;
-            this.flightsGridView.Size = new System.Drawing.Size(890, 122);
+            this.flightsGridView.Size = new System.Drawing.Size(1335, 191);
             this.flightsGridView.TabIndex = 0;
             this.flightsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flightsGridView_CellContentClick);
             // 
@@ -53,21 +54,24 @@
             // 
             this.seatCategoryGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.seatCategoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.seatCategoryGridView.Location = new System.Drawing.Point(274, 225);
+            this.seatCategoryGridView.Location = new System.Drawing.Point(411, 352);
+            this.seatCategoryGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.seatCategoryGridView.Name = "seatCategoryGridView";
             this.seatCategoryGridView.RowHeadersWidth = 51;
             this.seatCategoryGridView.RowTemplate.Height = 24;
-            this.seatCategoryGridView.Size = new System.Drawing.Size(429, 213);
+            this.seatCategoryGridView.Size = new System.Drawing.Size(644, 333);
             this.seatCategoryGridView.TabIndex = 1;
             this.seatCategoryGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seatCategoryGridView_CellContentClick);
             // 
             // btnBookFlight
             // 
             this.btnBookFlight.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBookFlight.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookFlight.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBookFlight.Location = new System.Drawing.Point(423, 459);
+            this.btnBookFlight.Location = new System.Drawing.Point(634, 717);
+            this.btnBookFlight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBookFlight.Name = "btnBookFlight";
-            this.btnBookFlight.Size = new System.Drawing.Size(124, 38);
+            this.btnBookFlight.Size = new System.Drawing.Size(186, 59);
             this.btnBookFlight.TabIndex = 2;
             this.btnBookFlight.Text = "Book Flight";
             this.btnBookFlight.UseVisualStyleBackColor = false;
@@ -76,10 +80,9 @@
             // imgBackArrow
             // 
             this.imgBackArrow.Image = global::HappyJourney.Properties.Resources.Back_arrow;
-            this.imgBackArrow.Location = new System.Drawing.Point(41, 23);
-            this.imgBackArrow.Margin = new System.Windows.Forms.Padding(2);
+            this.imgBackArrow.Location = new System.Drawing.Point(62, 36);
             this.imgBackArrow.Name = "imgBackArrow";
-            this.imgBackArrow.Size = new System.Drawing.Size(29, 27);
+            this.imgBackArrow.Size = new System.Drawing.Size(44, 42);
             this.imgBackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBackArrow.TabIndex = 21;
             this.imgBackArrow.TabStop = false;
@@ -87,13 +90,15 @@
             // 
             // FlightDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 519);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1472, 798);
             this.Controls.Add(this.imgBackArrow);
             this.Controls.Add(this.btnBookFlight);
             this.Controls.Add(this.seatCategoryGridView);
             this.Controls.Add(this.flightsGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FlightDetail";
             this.Text = "FlightDetail";
             ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).EndInit();

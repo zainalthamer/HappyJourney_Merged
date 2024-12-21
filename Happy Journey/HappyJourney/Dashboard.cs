@@ -117,5 +117,12 @@ namespace HappyJourney
             manageDatabaseBackups.ShowDialog();
             this.Hide();
         }
+
+        private void btnManageReports_Click(object sender, EventArgs e)
+        {
+            ManageReports manageReports = new ManageReports(loggedInUserId, loggedInUserRoleId);
+            manageReports.ShowDialog();
+            this.Hide();
+        }
     }
 }

@@ -238,6 +238,7 @@
             this.btnManageReports.TabIndex = 12;
             this.btnManageReports.Text = "Manage Reports";
             this.btnManageReports.UseVisualStyleBackColor = false;
+            this.btnManageReports.Click += new System.EventHandler(this.btnManageReports_Click);
             // 
             // Dashboard
             // 

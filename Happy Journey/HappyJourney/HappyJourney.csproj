@@ -354,6 +354,9 @@
     <EmbeddedResource Include="EditFlight.resx">
       <DependentUpon>EditFlight.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditService.resx">
       <DependentUpon>EditService.cs</DependentUpon>
     </EmbeddedResource>
