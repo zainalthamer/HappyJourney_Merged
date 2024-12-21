@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HappyJourney
 {
@@ -32,7 +27,6 @@ namespace HappyJourney
         private Dictionary<string, decimal> servicePrices = new Dictionary<string, decimal>();
         private List<Passenger> passengers = new List<Passenger>();
 
-
         public Book_flight(int userId, int roleId, int flightId)
         {
             InitializeComponent();
@@ -43,56 +37,12 @@ namespace HappyJourney
             SetupMenuStrip();
             PopulateSeatDropdowns();
             LoadServicePrices();
+
+            // Set placeholders for all textboxes
+            SetPassengerPlaceholders();
         }
 
-        private void Book_flight_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBookFlight_Click(object sender, EventArgs e)
-        {
-            passengers.Clear();
-
-            if (!ValidatePassenger(txtFirstName1.Text, txtLastName1.Text, txtCpr1.Text, txtDateOfBirth1.Text, txtGender1.Text, cmbSeat1.SelectedItem, out Passenger passenger1))
-            {
-                MessageBox.Show("Passenger 1 details are required and must be valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            passengers.Add(passenger1);
-
-            if (!string.IsNullOrWhiteSpace(txtFirstName2.Text) || !string.IsNullOrWhiteSpace(txtLastName2.Text) || !string.IsNullOrWhiteSpace(txtCpr2.Text))
-            {
-                if (!ValidatePassenger(txtFirstName2.Text, txtLastName2.Text, txtCpr2.Text, txtDateOfBirth2.Text, txtGender2.Text, cmbSeat2.SelectedItem, out Passenger passenger2))
-                {
-                    MessageBox.Show("Please ensure Passenger 2 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                passengers.Add(passenger2);
-            }
-
-            if (!string.IsNullOrWhiteSpace(txtFirstName3.Text) || !string.IsNullOrWhiteSpace(txtLastName3.Text) || !string.IsNullOrWhiteSpace(txtCpr3.Text))
-            {
-                if (!ValidatePassenger(txtFirstName3.Text, txtLastName3.Text, txtCpr4.Text, txtDateOfBirth3.Text, txtGender3.Text, cmbSeat3.SelectedItem, out Passenger passenger3))
-                {
-                    MessageBox.Show("Please ensure Passenger 3 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                passengers.Add(passenger3);
-            }
-
-            if (!string.IsNullOrWhiteSpace(txtFirstName4.Text) || !string.IsNullOrWhiteSpace(txtLastName4.Text) || !string.IsNullOrWhiteSpace(txtCpr4.Text))
-            {
-                if (!ValidatePassenger(txtFirstName4.Text, txtLastName4.Text, txtCpr4.Text, txtDateOfBirth4.Text, txtGender4.Text, cmbSeat4.SelectedItem, out Passenger passenger4))
-                {
-                    MessageBox.Show("Please ensure Passenger 4 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                passengers.Add(passenger4);
-            }
-
-            ProceedToPayment();
-        }
+        private void Book_flight_Load(object sender, EventArgs e) { }
 
         private void SetupMenuStrip()
         {
@@ -137,45 +87,100 @@ namespace HappyJourney
             this.Controls.Add(menuStrip);
         }
 
-        private void NavigateToInbox()
-        {
-            Inbox inbox = new Inbox(loggedInUserId, loggedInUserRoleId);
-            inbox.ShowDialog();
-            this.Hide();
 
+        private void btnBookFlight_Click(object sender, EventArgs e)
+        {
+            passengers.Clear();
+
+            if (!ValidatePassenger(txtFirstName1.Text, txtLastName1.Text, txtCpr1.Text, txtDateOfBirth1.Text, txtGender1.Text, cmbSeat1.SelectedItem, out Passenger passenger1))
+            {
+                MessageBox.Show("Passenger 1 details are required and must be valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            passengers.Add(passenger1);
+
+            if (IsPassengerInputValid(txtFirstName2, txtLastName2, txtCpr2))
+            {
+                if (!ValidatePassenger(txtFirstName2.Text, txtLastName2.Text, txtCpr2.Text, txtDateOfBirth2.Text, txtGender2.Text, cmbSeat2.SelectedItem, out Passenger passenger2))
+                {
+                    MessageBox.Show("Please ensure Passenger 2 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                passengers.Add(passenger2);
+            }
+
+            if (IsPassengerInputValid(txtFirstName3, txtLastName3, txtCpr3))
+            {
+                if (!ValidatePassenger(txtFirstName3.Text, txtLastName3.Text, txtCpr3.Text, txtDateOfBirth3.Text, txtGender3.Text, cmbSeat3.SelectedItem, out Passenger passenger3))
+                {
+                    MessageBox.Show("Please ensure Passenger 3 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                passengers.Add(passenger3);
+            }
+
+            if (IsPassengerInputValid(txtFirstName4, txtLastName4, txtCpr4))
+            {
+                if (!ValidatePassenger(txtFirstName4.Text, txtLastName4.Text, txtCpr4.Text, txtDateOfBirth4.Text, txtGender4.Text, cmbSeat4.SelectedItem, out Passenger passenger4))
+                {
+                    MessageBox.Show("Please ensure Passenger 4 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                passengers.Add(passenger4);
+            }
+
+            ProceedToPayment();
         }
 
-        private void NavigateToCompose()
+        private void SetPassengerPlaceholders()
         {
-            Compose compose = new Compose(loggedInUserId, loggedInUserRoleId);
-            compose.ShowDialog();
-            this.Hide();
+            SetupPlaceholder(txtFirstName1, "First name");
+            SetupPlaceholder(txtLastName1, "Last name");
+            SetupPlaceholder(txtCpr1, "CPR");
+            SetupPlaceholder(txtDateOfBirth1, "Date of birth");
+            SetupPlaceholder(txtGender1, "Gender");
+
+            SetupPlaceholder(txtFirstName2, "First name");
+            SetupPlaceholder(txtLastName2, "Last name");
+            SetupPlaceholder(txtCpr2, "CPR");
+            SetupPlaceholder(txtDateOfBirth2, "Date of birth");
+            SetupPlaceholder(txtGender2, "Gender");
+
+            SetupPlaceholder(txtFirstName3, "First name");
+            SetupPlaceholder(txtLastName3, "Last name");
+            SetupPlaceholder(txtCpr3, "CPR");
+            SetupPlaceholder(txtDateOfBirth3, "Date of birth");
+            SetupPlaceholder(txtGender3, "Gender");
+
+            SetupPlaceholder(txtFirstName4, "First name");
+            SetupPlaceholder(txtLastName4, "Last name");
+            SetupPlaceholder(txtCpr4, "CPR");
+            SetupPlaceholder(txtDateOfBirth4, "Date of birth");
+            SetupPlaceholder(txtGender4, "Gender");
         }
 
-        private void NavigateToProfile()
+        private void SetupPlaceholder(TextBox textBox, string placeholderText)
         {
-            Profile profile = new Profile(loggedInUserId, loggedInUserRoleId);
-            profile.ShowDialog();
-            this.Hide();
-        }
+            textBox.Text = placeholderText;
+            textBox.ForeColor = Color.Gray;
 
-        private void NavigateToDashboard()
-        {
-            Dashboard dashboard = new Dashboard(loggedInUserId, loggedInUserRoleId);
-            dashboard.ShowDialog();
-            this.Hide();
-        }
+            textBox.GotFocus += (sender, e) =>
+            {
+                if (textBox.Text == placeholderText)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
 
-        private void NavigateToBookings()
-        {
-            Bookings bookings = new Bookings(loggedInUserId, loggedInUserRoleId);
-            bookings.ShowDialog();
-            this.Hide();
-        }
-
-        private void NavigateToHome()
-        {
-            MessageBox.Show("You are already on the Home page.");
+            textBox.LostFocus += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholderText;
+                    textBox.ForeColor = Color.Gray;
+                }
+            };
         }
 
         private void PopulateSeatDropdowns()
@@ -245,6 +250,23 @@ namespace HappyJourney
             return true;
         }
 
+        private bool IsPassengerInputValid(TextBox firstName, TextBox lastName, TextBox cpr)
+        {
+            return !string.IsNullOrWhiteSpace(firstName.Text) || !string.IsNullOrWhiteSpace(lastName.Text) || !string.IsNullOrWhiteSpace(cpr.Text);
+        }
+
+        private void ProceedToPayment()
+        {
+            decimal additionalServicesCost = CalculateAdditionalServicesCost(passengers.Count);
+            decimal baseFare = passengers.Sum(p => p.Price);
+            decimal vat = (baseFare + additionalServicesCost) * 0.10m;
+            decimal grandTotal = baseFare + additionalServicesCost + vat;
+
+            Payment paymentPage = new Payment(loggedInUserId, loggedInUserRoleId, passedFlightId, passengers, additionalServicesCost, baseFare, vat, grandTotal);
+            paymentPage.ShowDialog();
+            this.Hide();
+        }
+
         private decimal CalculateAdditionalServicesCost(int passengerCount)
         {
             decimal additionalCost = 0;
@@ -265,35 +287,40 @@ namespace HappyJourney
             return additionalCost;
         }
 
-        private void ProceedToPayment()
+        private void NavigateToInbox()
         {
-            List<Passenger> passengers = new List<Passenger>();
+            Inbox inbox = new Inbox(loggedInUserId, loggedInUserRoleId);
+            inbox.ShowDialog();
+        }
 
-            if (!ValidatePassenger(txtFirstName1.Text, txtLastName1.Text, txtCpr1.Text, txtDateOfBirth1.Text, txtGender1.Text, cmbSeat1.SelectedItem, out Passenger passenger1))
-            {
-                MessageBox.Show("Passenger 1 details are required and must be valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            passengers.Add(passenger1);
+        private void NavigateToCompose()
+        {
+            Compose compose = new Compose(loggedInUserId, loggedInUserRoleId);
+            compose.ShowDialog();
+        }
 
-            if (!string.IsNullOrWhiteSpace(txtFirstName2.Text) || !string.IsNullOrWhiteSpace(txtLastName2.Text) || !string.IsNullOrWhiteSpace(txtCpr2.Text))
-            {
-                if (!ValidatePassenger(txtFirstName2.Text, txtLastName2.Text, txtCpr2.Text, txtDateOfBirth2.Text, txtGender2.Text, cmbSeat2.SelectedItem, out Passenger passenger2))
-                {
-                    MessageBox.Show("Please ensure Passenger 2 details are valid!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                passengers.Add(passenger2);
-            }
+        private void NavigateToProfile()
+        {
+            Profile profile = new Profile(loggedInUserId, loggedInUserRoleId);
+            profile.Show();
+        }
 
-            decimal additionalServicesCost = CalculateAdditionalServicesCost(passengers.Count);
-            decimal baseFare = passengers.Sum(p => p.Price);
-            decimal vat = (baseFare + additionalServicesCost) * 0.10m;
-            decimal grandTotal = baseFare + additionalServicesCost + vat;
+        private void NavigateToDashboard()
+        {
+            Dashboard dashboard = new Dashboard(loggedInUserId, loggedInUserRoleId);
+            dashboard.ShowDialog();
+        }
 
-            Payment paymentPage = new Payment(loggedInUserId, loggedInUserRoleId, passedFlightId, passengers, additionalServicesCost, baseFare, vat, grandTotal);
-            paymentPage.ShowDialog();
-            this.Hide();
+        private void NavigateToBookings()
+        {
+            Bookings bookings = new Bookings(loggedInUserId, loggedInUserRoleId);
+            bookings.ShowDialog();
+        }
+
+        private void NavigateToHome()
+        {
+            Home home = new Home(loggedInUserId, loggedInUserRoleId);
+            home.ShowDialog();
         }
     }
 }
