@@ -369,11 +369,14 @@
             // 
             // cmbSeatCategory
             // 
+            this.cmbSeatCategory.ForeColor = System.Drawing.Color.Black;
             this.cmbSeatCategory.FormattingEnabled = true;
             this.cmbSeatCategory.Location = new System.Drawing.Point(49, 95);
             this.cmbSeatCategory.Name = "cmbSeatCategory";
             this.cmbSeatCategory.Size = new System.Drawing.Size(200, 33);
             this.cmbSeatCategory.TabIndex = 41;
+            this.cmbSeatCategory.Text = "Seat Category";
+            this.cmbSeatCategory.SelectedIndexChanged += new System.EventHandler(this.cmbSeatCategory_SelectedIndexChanged);
             // 
             // mnuBookFlight
             // 

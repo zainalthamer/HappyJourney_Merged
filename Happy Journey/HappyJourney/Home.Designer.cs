@@ -26,7 +26,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flightsGridView = new System.Windows.Forms.DataGridView();
             this.originTextBox = new System.Windows.Forms.TextBox();
             this.destTextBox = new System.Windows.Forms.TextBox();
@@ -47,14 +47,14 @@
             this.flightsGridView.AllowUserToAddRows = false;
             this.flightsGridView.AllowUserToDeleteRows = false;
             this.flightsGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.flightsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.flightsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.flightsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.flightsGridView.Location = new System.Drawing.Point(0, 341);
             this.flightsGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -69,7 +69,7 @@
             // 
             // originTextBox
             // 
-            this.originTextBox.Location = new System.Drawing.Point(208, 134);
+            this.originTextBox.Location = new System.Drawing.Point(125, 136);
             this.originTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.originTextBox.MinimumSize = new System.Drawing.Size(298, 30);
             this.originTextBox.Name = "originTextBox";
@@ -78,7 +78,7 @@
             // 
             // destTextBox
             // 
-            this.destTextBox.Location = new System.Drawing.Point(538, 134);
+            this.destTextBox.Location = new System.Drawing.Point(506, 134);
             this.destTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.destTextBox.MinimumSize = new System.Drawing.Size(298, 30);
             this.destTextBox.Name = "destTextBox";
@@ -87,7 +87,7 @@
             // 
             // arrivalDateTimePicker
             // 
-            this.arrivalDateTimePicker.Location = new System.Drawing.Point(1196, 134);
+            this.arrivalDateTimePicker.Location = new System.Drawing.Point(1286, 136);
             this.arrivalDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.arrivalDateTimePicker.MinimumSize = new System.Drawing.Size(298, 30);
             this.arrivalDateTimePicker.Name = "arrivalDateTimePicker";
@@ -96,7 +96,7 @@
             // 
             // departDateTimePicker
             // 
-            this.departDateTimePicker.Location = new System.Drawing.Point(866, 132);
+            this.departDateTimePicker.Location = new System.Drawing.Point(884, 132);
             this.departDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.departDateTimePicker.MinimumSize = new System.Drawing.Size(298, 30);
             this.departDateTimePicker.Name = "departDateTimePicker";
@@ -121,7 +121,7 @@
             // 
             this.originLabel.AutoSize = true;
             this.originLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.originLabel.Location = new System.Drawing.Point(203, 100);
+            this.originLabel.Location = new System.Drawing.Point(120, 102);
             this.originLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.originLabel.Name = "originLabel";
             this.originLabel.Size = new System.Drawing.Size(75, 25);
@@ -132,7 +132,7 @@
             // 
             this.dstLabel.AutoSize = true;
             this.dstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dstLabel.Location = new System.Drawing.Point(533, 100);
+            this.dstLabel.Location = new System.Drawing.Point(501, 100);
             this.dstLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dstLabel.Name = "dstLabel";
             this.dstLabel.Size = new System.Drawing.Size(131, 25);
@@ -143,7 +143,7 @@
             // 
             this.departureLabel.AutoSize = true;
             this.departureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departureLabel.Location = new System.Drawing.Point(861, 98);
+            this.departureLabel.Location = new System.Drawing.Point(879, 98);
             this.departureLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.departureLabel.Name = "departureLabel";
             this.departureLabel.Size = new System.Drawing.Size(174, 25);
@@ -154,7 +154,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1191, 100);
+            this.label1.Location = new System.Drawing.Point(1281, 102);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 25);
