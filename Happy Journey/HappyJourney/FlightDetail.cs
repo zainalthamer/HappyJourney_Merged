@@ -45,24 +45,24 @@ namespace HappyJourney
 
             // Query for flight details
             string flightQuery = @"
-    SELECT 
-        f.flight_id as 'Flight ID',
-        a1.iata_code as 'Origin',
-        a2.iata_code as 'Destination',
-        f.departure_time as 'Departure',
-        f.arrival_time as 'Arrival'
-    FROM Flight f
-    INNER JOIN Airport a1 ON f.origin_airport_id = a1.airport_id
-    INNER JOIN Airport a2 ON f.destination_airport_id = a2.airport_id
-    WHERE f.flight_id = @FlightId";
+            SELECT 
+                f.flight_number as 'Flight Number',
+                a1.iata_code as 'Origin',
+                a2.iata_code as 'Destination',
+                f.departure_time as 'Departure',
+                f.arrival_time as 'Arrival'
+            FROM Flight f
+            INNER JOIN Airport a1 ON f.origin_airport_id = a1.airport_id
+            INNER JOIN Airport a2 ON f.destination_airport_id = a2.airport_id
+            WHERE f.flight_number = @FlightId";
 
             // Query for seat categories
             string seatQuery = @"
-    SELECT 
-        name as 'Class',
-        CONCAT(price, ' BHD') as 'Price'
-    FROM SeatCategory
-    ORDER BY price ASC";
+            SELECT 
+                name as 'Class',
+                CONCAT(price, ' BHD') as 'Price'
+            FROM SeatCategory
+            ORDER BY price ASC";
 
             try
             {
