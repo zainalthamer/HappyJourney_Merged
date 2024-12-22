@@ -65,9 +65,9 @@ namespace HappyJourney
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtRecepient.Text) && !chkBroadcast.Checked)
+            if (string.IsNullOrWhiteSpace(txtRecepient.Text) && !chkBroadcast.Checked && !chkNotifySubscribers.Checked)
             {
-                MessageBox.Show("Please specify a recipient.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please specify a recipient or select a notification option.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -85,6 +85,10 @@ namespace HappyJourney
                 if (chkBroadcast.Checked && loggedInUserRoleId == 1)
                 {
                     BroadcastMessage(messageContent, currentDate);
+                }
+                else if (chkNotifySubscribers.Checked)
+                {
+                    NotifySubscribers(messageContent, currentDate);
                 }
                 else
                 {
@@ -145,6 +149,30 @@ namespace HappyJourney
                 else
                 {
                     throw new Exception("Recipient email not found.");
+                }
+            }
+        }
+
+        private void NotifySubscribers(string messageContent, DateTime messageDate)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Fetch all subscribed users
+                string fetchSubscribersQuery = "SELECT user_id FROM [User] WHERE is_subscribed = 1";
+                SqlCommand fetchCommand = new SqlCommand(fetchSubscribersQuery, connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(fetchCommand);
+                DataTable subscriberTable = new DataTable();
+                adapter.Fill(subscriberTable);
+
+                foreach (DataRow row in subscriberTable.Rows)
+                {
+                    int recipientId = Convert.ToInt32(row["user_id"]);
+                    InsertMessage(connection, messageContent, messageDate, recipientId);
                 }
             }
         }

@@ -244,7 +244,6 @@
             this.imgBackArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgBackArrow.TabIndex = 20;
             this.imgBackArrow.TabStop = false;
-            this.imgBackArrow.Click += new System.EventHandler(this.imgBakArrow_Click);
             // 
             // Payment
             // 
@@ -275,7 +274,6 @@
             this.MainMenuStrip = this.mnuPayment;
             this.Name = "Payment";
             this.Text = "Payment";
-            this.Load += new System.EventHandler(this.Payment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgBackArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

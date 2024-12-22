@@ -94,45 +94,54 @@ namespace HappyJourney
         {
             passengers.Clear();
 
-            // Ensure passenger 1 details are filled and seat category is selected
-            if (string.IsNullOrWhiteSpace(txtFirstName1.Text) ||
-                txtFirstName1.Text == "First name" ||
-                string.IsNullOrWhiteSpace(txtLastName1.Text) ||
-                txtLastName1.Text == "Last name" ||
-                string.IsNullOrWhiteSpace(txtCpr1.Text) ||
-                txtCpr1.Text == "CPR" ||
-                string.IsNullOrWhiteSpace(txtDateOfBirth1.Text) ||
-                txtDateOfBirth1.Text == "Date of birth" ||
-                string.IsNullOrWhiteSpace(txtGender1.Text) ||
-                txtGender1.Text == "Gender" ||
-                cmbSeatCategory.SelectedItem == null ||
-                cmbSeat1.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Please fill all details for Passenger 1 and select a seat category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                // Ensure Passenger 1 details are filled and validated
+                if (string.IsNullOrWhiteSpace(txtFirstName1.Text) ||
+                    txtFirstName1.Text == "First name" ||
+                    string.IsNullOrWhiteSpace(txtLastName1.Text) ||
+                    txtLastName1.Text == "Last name" ||
+                    string.IsNullOrWhiteSpace(txtCpr1.Text) ||
+                    txtCpr1.Text == "CPR" ||
+                    string.IsNullOrWhiteSpace(txtDateOfBirth1.Text) ||
+                    txtDateOfBirth1.Text == "Date of birth" ||
+                    string.IsNullOrWhiteSpace(txtGender1.Text) ||
+                    txtGender1.Text == "Gender" ||
+                    cmbSeatCategory.SelectedItem == null ||
+                    cmbSeat1.SelectedItem == null)
+                {
+                    MessageBox.Show("Please fill all details for Passenger 1 and select a seat category.",
+                        "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            // Validate Passenger 1
-            if (!ValidatePassenger(txtFirstName1.Text, txtLastName1.Text, txtCpr1.Text, txtDateOfBirth1.Text, txtGender1.Text, cmbSeat1.SelectedItem, out Passenger passenger1))
+                // Validate and add Passenger 1
+                if (!ValidatePassenger(txtFirstName1.Text, txtLastName1.Text, txtCpr1.Text, txtDateOfBirth1.Text, txtGender1.Text, cmbSeat1.SelectedItem, out Passenger passenger1))
+                {
+                    return; // Stop if Passenger 1 is invalid
+                }
+
+                passengers.Add(passenger1);
+
+                // Validate optional passengers
+                ValidateOptionalPassenger(txtFirstName2, txtLastName2, txtCpr2, txtDateOfBirth2, txtGender2, cmbSeat2);
+                ValidateOptionalPassenger(txtFirstName3, txtLastName3, txtCpr3, txtDateOfBirth3, txtGender3, cmbSeat3);
+                ValidateOptionalPassenger(txtFirstName4, txtLastName4, txtCpr4, txtDateOfBirth4, txtGender4, cmbSeat4);
+
+                // Ensure unique seats across all passengers
+                if (!AreSeatsUnique(passengers))
+                {
+                    return; // Stop if duplicate seats are found
+                }
+
+                // Proceed to payment
+                ProceedToPayment();
+            }
+            catch (Exception ex)
             {
-                return; // Stop if Passenger 1 is invalid
+                // Catch any exception thrown during optional passenger validation
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            passengers.Add(passenger1);
-
-            // Validate additional passengers if their details are provided
-            ValidateOptionalPassenger(txtFirstName2, txtLastName2, txtCpr2, txtDateOfBirth2, txtGender2, cmbSeat2);
-            ValidateOptionalPassenger(txtFirstName3, txtLastName3, txtCpr3, txtDateOfBirth3, txtGender3, cmbSeat3);
-            ValidateOptionalPassenger(txtFirstName4, txtLastName4, txtCpr4, txtDateOfBirth4, txtGender4, cmbSeat4);
-
-            // Ensure unique seats
-            if (!AreSeatsUnique(passengers))
-            {
-                return;
-            }
-
-            // Proceed to payment
-            ProceedToPayment();
         }
 
         private bool ValidatePassenger(string firstName, string lastName, string cpr, string dob, string gender, object seat, out Passenger passenger)
@@ -151,9 +160,9 @@ namespace HappyJourney
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(cpr) || cpr.Length != 9 || !cpr.All(char.IsDigit))
+            if (string.IsNullOrWhiteSpace(cpr))
             {
-                MessageBox.Show("CPR must be a valid 9-digit number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("CPR is required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -197,13 +206,27 @@ namespace HappyJourney
 
         private void ValidateOptionalPassenger(TextBox firstName, TextBox lastName, TextBox cpr, TextBox dob, TextBox gender, ComboBox seat)
         {
-            if (IsPassengerInputValid(firstName, lastName, cpr))
+            // Skip validation if all fields are empty or placeholders
+            if (string.IsNullOrWhiteSpace(firstName.Text) || firstName.Text == "First name" &&
+                string.IsNullOrWhiteSpace(lastName.Text) || lastName.Text == "Last name" &&
+                string.IsNullOrWhiteSpace(cpr.Text) || cpr.Text == "CPR" &&
+                string.IsNullOrWhiteSpace(dob.Text) || dob.Text == "Date of birth" &&
+                string.IsNullOrWhiteSpace(gender.Text) || gender.Text == "Gender" &&
+                seat.SelectedItem == null)
             {
-                if (ValidatePassenger(firstName.Text, lastName.Text, cpr.Text, dob.Text, gender.Text, seat.SelectedItem, out Passenger passenger))
-                {
-                    passengers.Add(passenger);
-                }
+                return; // Skip validation for this optional passenger
             }
+
+            // Validate the passenger details
+            if (!ValidatePassenger(firstName.Text, lastName.Text, cpr.Text, dob.Text, gender.Text, seat.SelectedItem, out Passenger passenger))
+            {
+                MessageBox.Show("Optional passenger details are incomplete or invalid. Please review the details.",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new Exception("Optional passenger validation failed."); // Stop processing and show error
+            }
+
+            // Add the validated passenger to the list
+            passengers.Add(passenger);
         }
 
         private void SetPassengerPlaceholders()
@@ -463,16 +486,25 @@ namespace HappyJourney
 
         private bool AreSeatsUnique(List<Passenger> passengers)
         {
+            // Extract seat codes from passengers
             var seatCodes = passengers.Select(p => p.SeatCode).ToList();
-            var duplicateSeats = seatCodes.GroupBy(s => s).Where(g => g.Count() > 1).Select(g => g.Key).ToList();
 
+            // Identify duplicate seat codes
+            var duplicateSeats = seatCodes
+                .GroupBy(seat => seat)
+                .Where(group => group.Count() > 1)
+                .Select(group => group.Key)
+                .ToList();
+
+            // If duplicates are found, show an alert and return false
             if (duplicateSeats.Any())
             {
-                MessageBox.Show($"Duplicate seat(s) found: {string.Join(", ", duplicateSeats)}. Please select unique seats.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Duplicate seat(s) detected: {string.Join(", ", duplicateSeats)}. Each passenger must select a unique seat.",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            return true;
+            return true; // No duplicates found
         }
     }
 }

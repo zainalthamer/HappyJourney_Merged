@@ -34,6 +34,7 @@
             this.txtMessageContent = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.chkBroadcast = new System.Windows.Forms.CheckBox();
+            this.chkNotifySubscribers = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // mnuCompose
@@ -95,12 +96,23 @@
             this.chkBroadcast.Text = "Broadcast";
             this.chkBroadcast.UseVisualStyleBackColor = true;
             // 
+            // chkNotifySubscribers
+            // 
+            this.chkNotifySubscribers.AutoSize = true;
+            this.chkNotifySubscribers.Location = new System.Drawing.Point(739, 551);
+            this.chkNotifySubscribers.Name = "chkNotifySubscribers";
+            this.chkNotifySubscribers.Size = new System.Drawing.Size(216, 29);
+            this.chkNotifySubscribers.TabIndex = 7;
+            this.chkNotifySubscribers.Text = "Notify subscribers";
+            this.chkNotifySubscribers.UseVisualStyleBackColor = true;
+            // 
             // Compose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1472, 719);
+            this.Controls.Add(this.chkNotifySubscribers);
             this.Controls.Add(this.chkBroadcast);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessageContent);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.TextBox txtMessageContent;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.CheckBox chkBroadcast;
+        private System.Windows.Forms.CheckBox chkNotifySubscribers;
     }
 }

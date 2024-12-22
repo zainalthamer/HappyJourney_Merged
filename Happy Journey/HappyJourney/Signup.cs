@@ -78,6 +78,7 @@ namespace HappyJourney
             string phone = txtPhone.Text.Trim();
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
+            bool isSubscribed = chkSubscribe.Checked;
 
             // Check for empty fields
             if (firstName == "First name" || lastName == "Last name" || dateOfBirth == "Date of birth" ||
@@ -146,13 +147,13 @@ namespace HappyJourney
                     {
                         command.Parameters.AddWithValue("@FirstName", firstName);
                         command.Parameters.AddWithValue("@LastName", lastName);
-                        command.Parameters.AddWithValue("@DateOfBirth", parsedDateOfBirth);
+                        command.Parameters.AddWithValue("@DateOfBirth", DateTime.Parse(dateOfBirth));
                         command.Parameters.AddWithValue("@Nationality", nationality);
                         command.Parameters.AddWithValue("@Phone", phone);
                         command.Parameters.AddWithValue("@Email", email);
                         command.Parameters.AddWithValue("@Password", hashedPassword); // Save the hashed password
                         command.Parameters.AddWithValue("@RoleId", 3); // Assign the traveler user role to the new user
-                        command.Parameters.AddWithValue("@IsSubscribed", 0); // Default not subscribed
+                        command.Parameters.AddWithValue("@IsSubscribed", isSubscribed ? 1 : 0); // Save the subscription state (1 for true, 0 for false)
 
                         command.ExecuteNonQuery();
                     }
@@ -177,6 +178,7 @@ namespace HappyJourney
             txtPhone.Clear();
             txtEmail.Clear();
             txtPassword.Clear();
+            chkSubscribe.Checked = false;
         }
 
         // hashing the traveler's password for security

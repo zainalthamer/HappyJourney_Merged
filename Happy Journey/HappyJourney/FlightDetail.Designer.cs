@@ -101,6 +101,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FlightDetail";
             this.Text = "FlightDetail";
+            this.Load += new System.EventHandler(this.FlightDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatCategoryGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBackArrow)).EndInit();

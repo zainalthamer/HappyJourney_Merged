@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyJourney
@@ -23,234 +18,125 @@ namespace HappyJourney
         private decimal vat;
         private decimal grandTotal;
 
-        public Payment(int userId, int roleId, int flightId, List<Passenger> passengers, decimal additionalServicesCost, decimal baseFare, decimal vat, decimal grandTotal)
+        public Payment(int userId, int roleId, int flightId, List<Passenger> passengers, decimal additionalServices, decimal baseFare, decimal vat, decimal grandTotal)
         {
             InitializeComponent();
+
             loggedInUserId = userId;
             loggedInUserRoleId = roleId;
             passedFlightId = flightId;
             this.passengers = passengers;
-            this.additionalServicesCost = additionalServicesCost;
+            this.additionalServicesCost = additionalServices;
             this.baseFare = baseFare;
             this.vat = vat;
             this.grandTotal = grandTotal;
 
-            SetupPlaceholder(txtCardNumber, "456825*****52064");
-            SetupPlaceholder(txtExpiration, "MM/YY");
-            SetupPlaceholder(txtCvv, "367");
+            LoadPaymentMethods();
+            DisplayPrices();
 
-            SetupMenuStrip();
-            PopulatePaymentDetails();
-            PopulatePaymentMethods();
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
         }
 
-        private void Payment_Load(object sender, EventArgs e)
+        private void DisplayPrices()
         {
-
+            lblBaseFaresPrice.Text = $"{baseFare:F2} BHD";
+            lblAdditionalServicesPrice.Text = $"{additionalServicesCost:F2} BHD";
+            lblVatPrice.Text = $"{vat:F2} BHD";
+            lblGrandTotalPrice.Text = $"{grandTotal:F2} BHD";
         }
 
-        private void PopulatePaymentMethods()
+        private void LoadPaymentMethods()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = "SELECT payment_method_id, type FROM PaymentMethod";
-
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            DataTable dt = new DataTable();
-                            dt.Load(reader);
-
-                            cmbPaymentMethod.DataSource = dt;
-                            cmbPaymentMethod.DisplayMember = "type"; // Display the type of payment
-                            cmbPaymentMethod.ValueMember = "payment_method_id"; // Store the payment_method_id as the value
-                            cmbPaymentMethod.SelectedIndex = -1; // Set no initial selection
+                            while (reader.Read())
+                            {
+                                int paymentMethodId = reader.GetInt32(0);
+                                string paymentType = reader.GetString(1);
+                                cmbPaymentMethod.Items.Add(new ComboBoxItem { Value = paymentMethodId, Text = paymentType });
+                            }
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error loading payment methods: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-        }
-
-        private void SetupPlaceholder(TextBox textBox, string placeholderText)
-        {
-            // Set placeholder text and color
-            textBox.Text = placeholderText;
-            textBox.ForeColor = Color.LightGray;
-
-            // clear placeholder text on focus
-            textBox.GotFocus += (sender, e) =>
+            catch (Exception ex)
             {
-                if (textBox.Text == placeholderText)
-                {
-                    textBox.Text = ""; // Clear the placeholder text
-                    textBox.ForeColor = Color.Black; // Reset text color
-                }
-            };
-
-            // Restore placeholder text if empty
-            textBox.LostFocus += (sender, e) =>
-            {
-                if (string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    textBox.Text = placeholderText; // Restore placeholder text
-                    textBox.ForeColor = Color.LightGray; // Set placeholder color
-                }
-            };
-        }
-
-        private void imgBakArrow_Click(object sender, EventArgs e)
-        {
-            Book_flight book_flight = new Book_flight(loggedInUserId, loggedInUserRoleId, passedFlightId);
-            book_flight.Show();
-            this.Hide();
-        }
-
-        private void SetupMenuStrip()
-        {
-            MenuStrip menuStrip = new MenuStrip();
-
-            ToolStripMenuItem homeItem = new ToolStripMenuItem("Home");
-            homeItem.Click += (s, e) =>
-            {
-                MessageBox.Show("You are already on the Home page.");
-            };
-
-            ToolStripMenuItem profileItem = new ToolStripMenuItem("Profile");
-            profileItem.Click += (s, e) => NavigateToProfile();
-
-            ToolStripMenuItem inboxItem = new ToolStripMenuItem("Inbox");
-            inboxItem.Click += (s, e) => NavigateToInbox();
-
-            ToolStripMenuItem composeItem = new ToolStripMenuItem("Compose");
-            composeItem.Click += (s, e) => NavigateToCompose();
-
-            menuStrip.Items.Add(homeItem);
-
-            if (loggedInUserRoleId == 1)
-            {
-                ToolStripMenuItem dashboardItem = new ToolStripMenuItem("Dashboard");
-                dashboardItem.Click += (s, e) => NavigateToDashboard();
-                menuStrip.Items.Add(dashboardItem);
+                MessageBox.Show($"Error loading payment methods: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            else if (loggedInUserRoleId == 3)
-            {
-                ToolStripMenuItem bookingsItem = new ToolStripMenuItem("Bookings");
-                bookingsItem.Click += (s, e) => NavigateToBookings();
-                menuStrip.Items.Add(bookingsItem);
-            }
-
-            menuStrip.Items.Add(profileItem);
-            menuStrip.Items.Add(inboxItem);
-            menuStrip.Items.Add(composeItem);
-
-            this.mnuPayment = menuStrip;
-            this.Controls.Add(menuStrip);
-        }
-
-        private void NavigateToInbox()
-        {
-            Inbox inbox = new Inbox(loggedInUserId, loggedInUserRoleId);
-            inbox.ShowDialog();
-            this.Hide();
-
-        }
-
-        private void NavigateToCompose()
-        {
-            Compose compose = new Compose(loggedInUserId, loggedInUserRoleId);
-            compose.ShowDialog();
-            this.Hide();
-        }
-
-        private void NavigateToProfile()
-        {
-            Profile profile = new Profile(loggedInUserId, loggedInUserRoleId);
-            profile.ShowDialog();
-            this.Hide();
-        }
-
-        private void NavigateToDashboard()
-        {
-            Dashboard dashboard = new Dashboard(loggedInUserId, loggedInUserRoleId);
-            dashboard.ShowDialog();
-            this.Hide();
-        }
-
-        private void NavigateToBookings()
-        {
-            Bookings bookings = new Bookings(loggedInUserId, loggedInUserRoleId);
-            bookings.ShowDialog();
-            this.Hide();
-        }
-
-        private void NavigateToHome()
-        {
-            MessageBox.Show("You are already on the Home page.");
-        }
-
-        private void PopulatePaymentDetails()
-        {
-            lblBaseFares.Text = $"{baseFare:C2}";
-            lblAdditionalServices.Text = $"{additionalServicesCost:C2}";
-            lblVat.Text = $"{vat:C2}";
-            lblGrandTotal.Text = $"{grandTotal:C2}";
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (!ValidatePaymentDetails())
+            if (cmbPaymentMethod.SelectedItem == null)
             {
-                MessageBox.Show("Please fill out all payment details correctly.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a payment method.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            if (!ValidatePaymentDetails())
+            {
+                return;
+            }
+
+            ComboBoxItem selectedPaymentMethod = cmbPaymentMethod.SelectedItem as ComboBoxItem;
+            if (selectedPaymentMethod == null)
+            {
+                MessageBox.Show("Invalid payment method selected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int paymentMethodId = selectedPaymentMethod.Value;
+
             try
             {
-                SaveBookingDetails();
-                MessageBox.Show("Payment successful! Your booking has been completed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SaveBooking(paymentMethodId);
+                MessageBox.Show("Payment successful! Your booking has been confirmed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while processing the payment: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while processing your payment: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private bool ValidatePaymentDetails()
         {
-            if (cmbPaymentMethod.SelectedItem == null || string.IsNullOrWhiteSpace(txtCardNumber.Text) ||
-                string.IsNullOrWhiteSpace(txtExpiration.Text) || string.IsNullOrWhiteSpace(txtCvv.Text))
+            string cardNumber = txtCardNumber.Text.Trim();
+            string expiration = txtExpiration.Text.Trim();
+            string cvv = txtCvv.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(cardNumber) || cardNumber.Length != 16 || !long.TryParse(cardNumber, out _))
             {
+                MessageBox.Show("Please enter a valid 16-digit card number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (!DateTime.TryParseExact(txtExpiration.Text, "MM/yy", null, System.Globalization.DateTimeStyles.None, out DateTime expirationDate) || expirationDate < DateTime.Now)
+            if (string.IsNullOrWhiteSpace(expiration) || !DateTime.TryParseExact(expiration, "MM/yy", null, System.Globalization.DateTimeStyles.None, out DateTime expiryDate) || expiryDate < DateTime.Now)
             {
-                MessageBox.Show("Please enter a valid expiration date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid expiration date (MM/yy) that is not expired.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (txtCvv.Text.Length != 3 || !int.TryParse(txtCvv.Text, out _))
+            if (string.IsNullOrWhiteSpace(cvv) || cvv.Length != 3 || !int.TryParse(cvv, out _))
             {
-                MessageBox.Show("Please enter a valid CVV (3 digits).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid 3-digit CVV.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             return true;
         }
 
-        private void SaveBookingDetails()
+        private void SaveBooking(int paymentMethodId)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
@@ -258,32 +144,44 @@ namespace HappyJourney
             {
                 conn.Open();
 
-                string insertBookingQuery = @"
-                    INSERT INTO Booking (traveler_id, flight_id, date, totalPrice, status, seat_category)
-                    VALUES (@TravelerId, @FlightId, @Date, @TotalPrice, @Status, @SeatCategory);
-                    SELECT SCOPE_IDENTITY();";
-
-                int bookingId;
-
-                using (SqlCommand cmd = new SqlCommand(insertBookingQuery, conn))
+                // Save transaction
+                string transactionQuery = "INSERT INTO [Transaction] (payment_method_id, amount, date) OUTPUT INSERTED.transaction_id VALUES (@PaymentMethodId, @Amount, @Date)";
+                int transactionId;
+                using (SqlCommand cmd = new SqlCommand(transactionQuery, conn))
                 {
-                    cmd.Parameters.AddWithValue("@TravelerId", passengers[0].CPR);
-                    cmd.Parameters.AddWithValue("@FlightId", passengers[0].BookingId);
+                    cmd.Parameters.AddWithValue("@PaymentMethodId", paymentMethodId);
+                    cmd.Parameters.AddWithValue("@Amount", grandTotal);
                     cmd.Parameters.AddWithValue("@Date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@TotalPrice", grandTotal);
-                    cmd.Parameters.AddWithValue("@Status", "Confirmed");
-                    cmd.Parameters.AddWithValue("@SeatCategory", "Economy");
 
-                    bookingId = Convert.ToInt32(cmd.ExecuteScalar());
+                    transactionId = (int)cmd.ExecuteScalar();
                 }
 
+                // Save booking
+                string bookingQuery = "INSERT INTO Booking (employer_id, traveler_id, transaction_id, date, flight_id, totalPrice, status, seat_category_id) OUTPUT INSERTED.booking_id " +
+                      "VALUES (@EmployerId, @TravelerId, @TransactionId, @Date, @FlightId, @TotalPrice, @Status, @SeatCategoryId)";
+                int bookingId;
+                using (SqlCommand cmd = new SqlCommand(bookingQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EmployerId", loggedInUserRoleId == 2 ? (object)loggedInUserId : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@TravelerId", loggedInUserRoleId == 3 ? (object)loggedInUserId : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@TransactionId", transactionId);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@FlightId", passedFlightId);
+                    cmd.Parameters.AddWithValue("@TotalPrice", grandTotal);
+                    cmd.Parameters.AddWithValue("@Status", "Confirmed");
+
+                    int seatCategoryId = 1; 
+                    cmd.Parameters.AddWithValue("@SeatCategoryId", seatCategoryId);
+
+                    bookingId = (int)cmd.ExecuteScalar();
+                }
+
+                // Save passengers
                 foreach (var passenger in passengers)
                 {
-                    string insertPassengerQuery = @"
-                        INSERT INTO Passenger (booking_id, seat_code, cpr, first_name, last_name, date_of_birth, gender, price)
-                        VALUES (@BookingId, @SeatCode, @CPR, @FirstName, @LastName, @DateOfBirth, @Gender, @Price);";
-
-                    using (SqlCommand cmd = new SqlCommand(insertPassengerQuery, conn))
+                    string passengerQuery = "INSERT INTO Passenger (booking_id, seat_code, cpr, first_name, last_name, date_of_birth, price, gender) " +
+                                            "VALUES (@BookingId, @SeatCode, @CPR, @FirstName, @LastName, @DateOfBirth, @Price, @Gender)";
+                    using (SqlCommand cmd = new SqlCommand(passengerQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@BookingId", bookingId);
                         cmd.Parameters.AddWithValue("@SeatCode", passenger.SeatCode);
@@ -291,28 +189,46 @@ namespace HappyJourney
                         cmd.Parameters.AddWithValue("@FirstName", passenger.FirstName);
                         cmd.Parameters.AddWithValue("@LastName", passenger.LastName);
                         cmd.Parameters.AddWithValue("@DateOfBirth", passenger.DateOfBirth);
-                        cmd.Parameters.AddWithValue("@Gender", passenger.Gender);
                         cmd.Parameters.AddWithValue("@Price", passenger.Price);
+                        cmd.Parameters.AddWithValue("@Gender", passenger.Gender);
 
                         cmd.ExecuteNonQuery();
                     }
                 }
+            }
+        }
 
-                // Insert transaction details
-                string insertTransactionQuery = @"
-                    INSERT INTO Transaction (payment_method_id, amount, date, status)
-                    VALUES (@PaymentMethod, @Amount, @Date, @Status);";
+        private class ComboBoxItem
+        {
+            public int Value { get; set; }
+            public string Text { get; set; }
 
-                using (SqlCommand cmd = new SqlCommand(insertTransactionQuery, conn))
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+
+        private int? GetSeatCategoryIdFromSeatCode(string seatCode, SqlConnection conn)
+        {
+            if (string.IsNullOrWhiteSpace(seatCode))
+            {
+                return null; // Return null if the seat code is invalid
+            }
+
+            string query = "SELECT seat_category_id FROM SeatCategory WHERE seat_code = @SeatCode";
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@SeatCode", seatCode);
+
+                object result = cmd.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int seatCategoryId))
                 {
-                    cmd.Parameters.AddWithValue("@PaymentMethod", cmbPaymentMethod.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@Amount", grandTotal);
-                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@Status", "Success");
-
-                    cmd.ExecuteNonQuery();
+                    return seatCategoryId;
                 }
             }
+
+            return null; // Return null if no matching seat category ID is found
         }
     }
 }
