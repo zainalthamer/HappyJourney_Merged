@@ -3,19 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\book flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\book flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|c:\\users\\zainn\\onedrive\\desktop\\happyjourney_merged\\happy journey\\happyjourney\\book flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\happyjourney\\book flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CDD34624-0A45-41EB-B28A-89020CE732EC}|HappyJourney\\HappyJourney.csproj|solutionrelative:happyjourney\\book flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,32 +46,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Home.cs",
-              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs",
-              "RelativeDocumentMoniker": "HappyJourney\\Home.cs",
-              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs",
-              "RelativeToolTip": "HappyJourney\\Home.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAAALkAAAAJAAAA",
+              "DocumentIndex": 0,
+              "Title": "Profile.cs",
+              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Profile.cs",
+              "RelativeDocumentMoniker": "HappyJourney\\Profile.cs",
+              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Profile.cs",
+              "RelativeToolTip": "HappyJourney\\Profile.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAawIUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T21:51:56.074Z",
+              "WhenOpened": "2024-12-22T05:11:37.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Home.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs",
-              "RelativeDocumentMoniker": "HappyJourney\\Home.cs",
-              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs [Design]",
-              "RelativeToolTip": "HappyJourney\\Home.cs [Design]",
+              "Title": "UserProfile.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\UserProfile.cs",
+              "RelativeDocumentMoniker": "HappyJourney\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\UserProfile.cs [Design]",
+              "RelativeToolTip": "HappyJourney\\UserProfile.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T21:51:54.64Z",
+              "WhenOpened": "2024-12-22T05:09:12.66Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Profile.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Profile.cs",
+              "RelativeDocumentMoniker": "HappyJourney\\Profile.cs",
+              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Profile.cs [Design]",
+              "RelativeToolTip": "HappyJourney\\Profile.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T05:08:02.933Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Book Flight.cs",
               "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Book Flight.cs",
               "RelativeDocumentMoniker": "HappyJourney\\Book Flight.cs",
@@ -72,15 +96,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Home.cs",
+              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs",
+              "RelativeDocumentMoniker": "HappyJourney\\Home.cs",
+              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs",
+              "RelativeToolTip": "HappyJourney\\Home.cs",
+              "ViewState": "AQIAALYAAAAAAAAAAAAAALkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T21:51:56.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Home.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs",
+              "RelativeDocumentMoniker": "HappyJourney\\Home.cs",
+              "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Home.cs [Design]",
+              "RelativeToolTip": "HappyJourney\\Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T21:51:54.64Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Book Flight.cs [Design]",
               "DocumentMoniker": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Book Flight.cs",
               "RelativeDocumentMoniker": "HappyJourney\\Book Flight.cs",
               "ToolTip": "C:\\Users\\zainn\\OneDrive\\Desktop\\HappyJourney_Merged\\Happy Journey\\HappyJourney\\Book Flight.cs [Design]",
               "RelativeToolTip": "HappyJourney\\Book Flight.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T21:42:34.511Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-21T21:42:34.511Z"
             }
           ]
         }
